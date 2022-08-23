@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+
+  build:
+    commands:
+    - echo Build started on `date`
+    - echo $IMAGE_NAME
+    - mvn clean package
+
+  post_build:
+    commands:
+
+artifacts:
+  files:
+  - target/eurekaserver.jar
+  discard-paths: yes
