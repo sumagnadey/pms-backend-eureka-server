@@ -7,10 +7,10 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - ...
-    - IMAGE_NAME=practice-jpa
-    - IMAGE_URI=
-    - CONTAINER_NAME=practice-jpa
+    - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-west-2.amazonaws.com
+    - IMAGE_NAME=sum-eurekaserver
+    - IMAGE_URI=860061945305.dkr.ecr.us-west-2.amazonaws.com/sum-eurekaserver:latest
+    - CONTAINER_NAME=sum-eurekaserver
   build:
     commands:
     - echo Build started on `date`
